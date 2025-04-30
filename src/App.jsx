@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,6 +10,10 @@ function App() {
   const changeColor = () => {
     setIndex((index + 1) % colors.length);
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = colors[index];
+  })
 
   return (
     <>
